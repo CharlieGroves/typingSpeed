@@ -23,7 +23,7 @@ body, .quote-input {
     max-width: 90%;
 }
 
-.timer {
+.timer, .wpm {
     position: absolute;
     top: 2rem;
     font-size: 3rem;
@@ -62,4 +62,5 @@ body, .quote-input {
     color: red;
     text-decoration: underline;
 }
+
 
