@@ -2,6 +2,7 @@ const RANDOM_QUOTE_API_URL = 'http://api.quotable.io/random'
 const quoteDisplayElement = document.getElementById('quote-display')
 const quoteInputElement = document.getElementById('quote-input')
 const timerElement = document.getElementById('timer')
+const wpmElement = document.getElementById('wpm')
 
 let doTimer = true
 
@@ -31,10 +32,8 @@ quoteInputElement.addEventListener('input', () => {
         var tempList = quote.split(' ')
         var length = tempList.length
         const wpm = document.createElement('a')
-        wpm.classList.add('wpm')
         const currentTime = timerElement.innerText;
-        console.log(length, currentTime)
-        timerElement.innerText = ((length / currentTime) * 60) + (' WPM')
+        wpmElement.innerText = ((length / currentTime) * 60) + (' WPM')
         doTimer = false
         renderNewQuote()
     }
@@ -55,11 +54,8 @@ async function renderNewQuote() {
         quoteDisplayElement.appendChild(characterSpan)
     })
     quoteInputElement.value = null;
-    
-    setTimeout(() => {
-        doTimer = true
-        startTimer()
-    }, 2000)
+    doTimer = true
+    startTimer()
 }
 
 let startTime
