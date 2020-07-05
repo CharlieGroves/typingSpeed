@@ -33,7 +33,7 @@ quoteInputElement.addEventListener('input', () => {
         var length = tempList.length
         const wpm = document.createElement('a')
         const currentTime = timerElement.innerText;
-        wpmElement.innerText = ((length / currentTime) * 60) + (' WPM')
+        wpmElement.innerText = Math.round(((length / currentTime) * 60)) + (' WPM')
         doTimer = false
         renderNewQuote()
     }
